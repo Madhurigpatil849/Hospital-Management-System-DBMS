@@ -1,9 +1,7 @@
-# Hospital-Management-System-DBMS
 # 🏥 Hospital Management System (DBMS Project)
 
 ## 📖 Overview
-The **Hospital Management System (HMS)** is a **database-driven project** designed to streamline the **administrative, medical, legal, and financial** aspects of a healthcare institution.  
-It facilitates **efficient handling of patient records, OPD, birth records, billing, staff management, and inventory**, ensuring faster workflows, accurate data, and better healthcare delivery.  
+The **Hospital Management System (HMS)** is a **database-driven project** designed to streamline the **administrative, medical, legal, and financial** aspects of a healthcare institution. It facilitates **efficient handling of patient records, OPD, birth records, billing, staff management, and inventory**, ensuring faster workflows, accurate data, and better healthcare delivery.  
 
 ---
 
@@ -14,7 +12,7 @@ It facilitates **efficient handling of patient records, OPD, birth records, bill
 💳 **Billing & Finance Automation** for OPD and in-patient services  
 📦 **Inventory Management** of medicines, drugs, and hospital supplies  
 👨‍⚕️ **Doctor & Staff Scheduling** for efficient operations  
-📈 **SQL Queries**: CRUD, Joins, Views, Aggregates, Grouping, Indexes  
+📈 **SQL Queries**: Joins, Views, Aggregates, Grouping, Indexes  
 
 ---
 
@@ -64,73 +62,68 @@ Tables implemented in HMS:
 
 ---
 
-## 🧠 Sample SQL Queries 
+## 🧠 Sample SQL Queries  
+**Basic Commands**  
+CREATE TABLE BirthRecords (...);  
+INSERT INTO BirthRecords VALUES (...);  
+SELECT * FROM Appointment WHERE doctor_id = 2;  
+ALTER TABLE BirthRecords DROP COLUMN baby_name;  
 
-### 🔹 Basic Commands  
-```sql
-CREATE TABLE BirthRecords (...);
-INSERT INTO BirthRecords VALUES (...);
-SELECT * FROM Appointment WHERE doctor_id = 2;
-ALTER TABLE BirthRecords DROP COLUMN baby_name;
+**Modifying Commands**  
+DELETE FROM OPDRecords WHERE diagnosis = 'Influenza';  
+UPDATE Patient SET contact_no='9876543210' WHERE patient_id=1;  
+ALTER TABLE Patient ADD bloodgroup VARCHAR(5);  
+ALTER TABLE Doctor RENAME COLUMN name TO doctor_name;  
 
-🔹 Modifying Commands
-DELETE FROM OPDRecords WHERE diagnosis = 'Influenza';
-UPDATE Patient SET contact_no='9876543210' WHERE patient_id=1;
-ALTER TABLE Patient ADD bloodgroup VARCHAR(5);
-ALTER TABLE Doctor RENAME COLUMN name TO doctor_name;
+**Conditions & Aggregates**  
+SELECT * FROM Patient WHERE birth_date BETWEEN '1990-01-01' AND '1995-12-31';  
+SELECT gender, AVG(weight) FROM BirthRecords GROUP BY gender;  
+SELECT SUM(amount) FROM Bills;  
 
-🔹 Conditions & Aggregates
-SELECT * FROM Patient WHERE birth_date BETWEEN '1990-01-01' AND '1995-12-31';
-SELECT gender, AVG(weight) FROM BirthRecords GROUP BY gender;
-SELECT SUM(amount) FROM Bills;
+**Joins & Views**  
+SELECT p.patient_name, b.birth_date FROM Patient p INNER JOIN BirthRecords b ON p.patient_id=b.patient_id;  
+CREATE VIEW PatientBirth AS SELECT p.patient_name, b.birth_date FROM Patient p JOIN BirthRecords b;  
 
-🔹 Joins & Views
-SELECT p.patient_name, b.birth_date 
-FROM Patient p INNER JOIN BirthRecords b ON p.patient_id=b.patient_id;
+**Index**  
+CREATE INDEX idx_patient_name ON Patient(patient_name);  
 
-CREATE VIEW PatientBirth AS 
-SELECT p.patient_name, b.birth_date FROM Patient p JOIN BirthRecords b;
+---
 
-🔹 Index
-CREATE INDEX idx_patient_name ON Patient(patient_name);
+## 📊 Advantages
+✅ Improved efficiency & reduced paperwork  
+✅ Centralized and secure database  
+✅ Faster record retrieval for doctors & staff  
+✅ Cost savings via automation  
+✅ Enhanced patient care & hospital coordination  
 
-📊 Advantages
-✅ Improved efficiency & reduced paperwork
-✅ Centralized and secure database
-✅ Faster record retrieval for doctors & staff
-✅ Cost savings via automation
-✅ Enhanced patient care & hospital coordination
+---
 
-⚠️ Disadvantages
-⚠️ High initial cost of setup & training
-⚠️ Risk of technical issues/downtime
-⚠️ Data breach risks without strong security
-⚠️ Ongoing maintenance costs
+## ⚠️ Disadvantages
+⚠️ High initial cost of setup & training  
+⚠️ Risk of technical issues/downtime  
+⚠️ Data breach risks without strong security  
+⚠️ Ongoing maintenance costs  
 
-🔮 Future Scope
-Web/Mobile app integration for real-time access
+---
 
-Cloud deployment for scalability
+## 🔮 Future Scope
+- Web/Mobile app integration for real-time access  
+- Cloud deployment for scalability  
+- Role-based authentication for better data security  
+- Advanced dashboards for patient trends & hospital analytics  
+- Integration with labs & pharmacies  
 
-Role-based authentication for better data security
+---
 
-Advanced dashboards for patient trends & hospital analytics
+## 👩‍💻 Team Members
+- 47 – Madhuri G. Patil  
+- 49 – Durva P. Patkar  
+- 57 – Vaishnavi Rawate  
+**Guided by:** Mrs. Kumud Wasnik  
 
-Integration with labs & pharmacies
+---
 
-👩‍💻 Team Members
-47 – Madhuri G. Patil
-
-49 – Durva P. Patkar
-
-57 – Vaishnavi Rawate
-
-Guided by: Mrs. Kumud Wasnik
-
-📚 References
-ResearchGate – HMS Project
-
-Scribd – HMS Report
-
-Slideshare – HMS Project
-
+## 📚 References
+- ResearchGate – HMS Project  
+- Scribd – HMS Report  
+- Slideshare – HMS Project  
